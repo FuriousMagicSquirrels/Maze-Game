@@ -8,7 +8,7 @@ public class CannonballManager : MonoBehaviour {
     float timer = 0.0f;
 
     public static int numCannonballs = 9;
-    GameObject cannonballHolder;
+    //GameObject cannonballHolder;
     Vector3[] cbPositions = new Vector3[numCannonballs];
     //float[] cb = new Vector3[numCannonballs];
     Vector3[] cbVels = new Vector3[numCannonballs];
@@ -19,7 +19,7 @@ public class CannonballManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        cannonballHolder = GameObject.Find("Cannonballs");
+        //cannonballHolder = GameObject.Find("Cannonballs");
 
         // get positions of all cannonballGhost objects
         for (int i = 0; i < numCannonballs; i++)
@@ -40,6 +40,8 @@ public class CannonballManager : MonoBehaviour {
             //print("cbDirScript.vel: " + cbDirScript.vel);
             cbVels[i] = cbDirScript.vel;
 
+            // inactivate ghosts
+            obj.SetActive(false);
         }
 
 	}
@@ -64,7 +66,7 @@ public class CannonballManager : MonoBehaviour {
                 // set script's speed
                 //print("vel: " + vel);
                 //print("speed:" + speed);
-                Vector3 newVel = vel * speed;
+                //Vector3 newVel = vel * speed;
                 //print("newVel:" + newVel);
                 moveCbScript.vel = vel * speed;
             }

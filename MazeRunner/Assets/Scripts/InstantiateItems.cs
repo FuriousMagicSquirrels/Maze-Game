@@ -16,7 +16,7 @@ public class InstantiateItems : MonoBehaviour {
         // access prefab array with it 
         // instantiate prefab at item's position
         for (int i = 0; i < numItemsInGame; i++) {
-            int rand = Random.Range(0, 2);            
+            int rand = Random.Range(0, numPrefabs);            
             string prefabName = prefabs[rand];
 
             string objName = "Item (" + i + ")";         

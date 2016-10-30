@@ -41,7 +41,7 @@ public class MoveCannonball : MonoBehaviour {
         // if ai, stun
 
         // destroy
-        print("collision");
+        //print("collision");
         Destroy(gameObject);
     }
 
