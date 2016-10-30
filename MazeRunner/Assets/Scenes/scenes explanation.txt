@@ -1,4 +1,4 @@
 - maze1 - just walls
 - powerups - speed potions and stun bombs (the player cant pick them up yet)
-- cannonballs - finished
-- logsandboxes - in progress
+- cannonballs - added moving cannonballs
+- logsandboxes - added more obstacles: logs, trunks, and boxes
