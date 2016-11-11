@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 // Require these components when using this script
 [RequireComponent(typeof (Animator))]
@@ -92,6 +93,13 @@ public class BotControlScript : MonoBehaviour
 					anim.MatchTarget(hitInfo.point, Quaternion.identity, AvatarTarget.Root, new MatchTargetWeightMask(new Vector3(0, 1, 0), 0), 0.35f, 0.5f);
 				}
 			}
+		}
+	}
+	
+	void OnCollisionEnter(Collision col) {
+		if (col.gameObject.name == "CampfireCollider") {
+			Scene scene = SceneManager.GetActiveScene(); 
+			SceneManager.LoadScene(scene.name);
 		}
 	}
 }
