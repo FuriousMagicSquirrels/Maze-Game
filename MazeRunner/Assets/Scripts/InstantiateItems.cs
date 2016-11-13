@@ -4,9 +4,9 @@ using System.Collections;
 public class InstantiateItems : MonoBehaviour {
 
     // make array of item prefabs
-    int numPrefabs = 2;
-    int numItemsInGame = 14;
-    string[] prefabs = { "StunBomb","SpeedPotion" };
+    int numPrefabs = 1; // set to 2 when use speedpot/some other item
+    public int numItemsInGame = 14;
+    string[] prefabs = { "StunBombItem","SpeedPotion" };
 
 
 	// Use this for initialization
@@ -17,14 +17,16 @@ public class InstantiateItems : MonoBehaviour {
         // instantiate prefab at item's position
         for (int i = 0; i < numItemsInGame; i++) {
             int rand = Random.Range(0, numPrefabs);            
-            string prefabName = prefabs[rand];
+            string prefabName = prefabs[rand];            
 
             string objName = "Item (" + i + ")";         
             GameObject obj = GameObject.Find(objName);
             Vector3 pos = obj.transform.position;
-            //print("pos:" + pos);
 
             Instantiate(Resources.Load(prefabName), pos, Quaternion.identity);
+
+            // inactivate object ghost
+            obj.SetActive(false);
         }
 
     }

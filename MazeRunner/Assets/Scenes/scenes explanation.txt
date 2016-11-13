@@ -1,4 +1,3 @@
-- maze1 - just walls
-- powerups - speed potions and stun bombs (the player cant pick them up yet)
-- cannonballs - added moving cannonballs
-- logsandboxes - added more obstacles: logs, trunks, and boxes
+Level 1 - LogsAndBoxes
+Level 2
+Level 3

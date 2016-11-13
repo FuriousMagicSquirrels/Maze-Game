@@ -5,7 +5,7 @@ public class CreateInanimObsts : MonoBehaviour {
 
     // make array of item prefabs
     int numPrefabs = 3;
-    int numItemsInGame = 16;
+    public int numItemsInGame = 16;
     string[] prefabs = {"Trunk_Lod0", "Big_box", "Small_box" };
 
 
