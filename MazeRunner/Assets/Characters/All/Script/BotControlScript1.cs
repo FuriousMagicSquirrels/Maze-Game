@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof (Animator))]
 [RequireComponent(typeof (CapsuleCollider))]
 [RequireComponent(typeof (Rigidbody))]
-public class BotControlScript : MonoBehaviour
+public class BotControlScript1 : MonoBehaviour
 {
 	[System.NonSerialized]					
 	public float lookWeight;					// the amount to transition when using head look
@@ -100,7 +100,7 @@ public class BotControlScript : MonoBehaviour
 		if (col.gameObject.name == "CampfireCollider") {
 			//Scene scene = SceneManager.GetActiveScene(); 
 			//Debug.Log(scene.name);
-			SceneManager.LoadScene("Level2");
+			SceneManager.LoadScene("Level3");
 		}
 	}
 }

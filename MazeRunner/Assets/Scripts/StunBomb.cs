@@ -9,13 +9,13 @@ public class StunBomb : MonoBehaviour
     float lifetime = 0;
 
     GameObject player;
-    PlayerScript script;
+    //PlayerScript script;
 
     // Use this for initialization
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        script = player.GetComponent<PlayerScript>();
+        //script = player.GetComponent<PlayerScript>();
         
     }
 
