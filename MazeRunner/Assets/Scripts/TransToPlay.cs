@@ -16,7 +16,7 @@ public class TransToPlay : MonoBehaviour
 
     public void toplay()
     {
-        SceneManager.LoadScene("LogsAndBoxes");
+        SceneManager.LoadScene("Level1");
 
     }
 }
