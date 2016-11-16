@@ -9,8 +9,14 @@
 using UnityEngine;
 using System.Collections;
 
-public class CannonballDirection : MonoBehaviour {
+public class Quit : MonoBehaviour {
 
-    public Vector3 vel = Vector3.zero;
-
+    public void quit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 }

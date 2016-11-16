@@ -1,22 +1,31 @@
-﻿using UnityEngine;
+﻿//Team Name: Furious Magical Squirrels Team Members: Chao Wang, cwang624@gatech.edu, cwang624
+//               Brandon Chiem, bchiem3 @gatech.edu, bchiem3
+//               Jennifer Ma, jma76 @gatech.edu, jma76
+//               Trung Nguyen, tnguyen337 @gatech.edu, tnguyen337
+//               Annie Matin, amatin3 @gatech.edu, amatin3
+
+using UnityEngine;
 using System.Collections;
 
 public class CannonballManager : MonoBehaviour {
 
     // instantiate cannonballs every x seconds, with their own move script
-    float intervalSec = 3.0f;
+    float intervalSec = 1.0f;
     float timer = 0.0f;
+
+    public static int numCannonballs = 9;
+    //GameObject cannonballHolder;
+    Vector3[] cbPositions = new Vector3[numCannonballs];
+    //float[] cb = new Vector3[numCannonballs];
+    Vector3[] cbVels = new Vector3[numCannonballs];
+
     float speed = 7.0f;
 
-    public int numCannonballs;   
-    Vector3[] cbPositions;
-    Vector3[] cbVels;    
-    
+    //Cannonball cbType;
+
     // Use this for initialization
     void Start () {
-
-        cbPositions = new Vector3[numCannonballs];
-        cbVels = new Vector3[numCannonballs];
+        //cannonballHolder = GameObject.Find("Cannonballs");
 
         // get positions of all cannonballGhost objects
         for (int i = 0; i < numCannonballs; i++)
@@ -24,18 +33,21 @@ public class CannonballManager : MonoBehaviour {
             // get pos
             string objName = "CannonballGhost (" + i + ")";
             GameObject obj = GameObject.Find("Cannonballs/"+objName);
-
+            Vector3 pos = obj.transform.position;
+            //print("pos:" + pos);
+            
             // set pos
-            Vector3 pos = obj.transform.position;                     
             cbPositions[i] = pos;
 
-            // set velocity
-            CannonballDirection cbDirScript = obj.GetComponent<CannonballDirection>();            
+            // get velocity
+            CannonballDirection cbDirScript = obj.GetComponent<CannonballDirection>();
+
+            // set vel
+            //print("cbDirScript.vel: " + cbDirScript.vel);
             cbVels[i] = cbDirScript.vel;
 
             // inactivate ghosts
             obj.SetActive(false);
-            
         }
 
 	}
@@ -58,6 +70,10 @@ public class CannonballManager : MonoBehaviour {
                 MoveCannonball moveCbScript = cb.GetComponent<MoveCannonball>();
 
                 // set script's speed
+                //print("vel: " + vel);
+                //print("speed:" + speed);
+                //Vector3 newVel = vel * speed;
+                //print("newVel:" + newVel);
                 moveCbScript.vel = vel * speed;
             }
 

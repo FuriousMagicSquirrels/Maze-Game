@@ -8,9 +8,15 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
-public class CannonballDirection : MonoBehaviour {
+public class Exit : MonoBehaviour {
 
-    public Vector3 vel = Vector3.zero;
 
+	void Update () {
+
+        if (Input.GetKey("escape"))
+            SceneManager.LoadScene("menu");
+
+    }
 }

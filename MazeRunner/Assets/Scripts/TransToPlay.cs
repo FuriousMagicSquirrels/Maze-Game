@@ -8,9 +8,14 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
-public class CannonballDirection : MonoBehaviour {
+public class TransToPlay : MonoBehaviour
+{
 
-    public Vector3 vel = Vector3.zero;
+    public void toplay()
+    {
+        SceneManager.LoadScene("LogsAndBoxes");
 
+    }
 }

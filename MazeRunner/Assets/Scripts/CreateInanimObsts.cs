@@ -1,11 +1,18 @@
-﻿using UnityEngine;
+﻿//Team Name: Furious Magical Squirrels Team Members: Chao Wang, cwang624@gatech.edu, cwang624
+//               Brandon Chiem, bchiem3 @gatech.edu, bchiem3
+//               Jennifer Ma, jma76 @gatech.edu, jma76
+//               Trung Nguyen, tnguyen337 @gatech.edu, tnguyen337
+//               Annie Matin, amatin3 @gatech.edu, amatin3
+
+
+using UnityEngine;
 using System.Collections;
 
 public class CreateInanimObsts : MonoBehaviour {
 
     // make array of item prefabs
     int numPrefabs = 3;
-    public int numItemsInGame = 16;
+    int numItemsInGame = 16;
     string[] prefabs = {"Trunk_Lod0", "Big_box", "Small_box" };
 
 

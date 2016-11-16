@@ -5,12 +5,15 @@
 //               Annie Matin, amatin3 @gatech.edu, amatin3
 
 
-
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
-public class CannonballDirection : MonoBehaviour {
+public class TransToMenu : MonoBehaviour {
 
-    public Vector3 vel = Vector3.zero;
-
+    public void tomenu()
+    {   
+        SceneManager.LoadScene("menu");
+    }
 }
+
