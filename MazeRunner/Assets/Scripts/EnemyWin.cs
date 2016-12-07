@@ -9,5 +9,8 @@ void OnCollisionEnter(Collision col) {
 			Scene scene = SceneManager.GetActiveScene(); 
 			SceneManager.LoadScene(scene.name);
 		}
+		else if(col.gameObject.name == "Player") {
+			SceneManager.LoadScene("Level2");
+		}
 	}
 }
