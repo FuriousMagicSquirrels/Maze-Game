@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class EnemyWinLv2 : MonoBehaviour {
+public class LevelChanger : MonoBehaviour {
 
 public string nextLevelName;
 public bool winEnable = false;
