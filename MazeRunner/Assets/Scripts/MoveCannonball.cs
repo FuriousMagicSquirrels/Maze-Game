@@ -10,15 +10,12 @@ public class MoveCannonball : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
         checkLifetime();
         moveCannonball();
-
     }
 
     void moveCannonball()
-    {
-        
+    {        
         this.transform.position += vel * Time.deltaTime;
     }
 
@@ -41,7 +38,9 @@ public class MoveCannonball : MonoBehaviour {
         // if ai, stun
 
         // destroy
-        //print("collision");
+        print("cannonball collision");
+        print(gameObject.name);
+        print(collision.gameObject.name);
         Destroy(gameObject);
     }
 

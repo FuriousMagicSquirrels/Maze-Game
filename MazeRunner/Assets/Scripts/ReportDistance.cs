@@ -11,7 +11,7 @@ public class ReportDistance : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float dist = Vector3.Distance(finish.transform.position, transform.position);
-        ranking.add(dist, this.name);
+        //float dist = Vector3.Distance(finish.transform.position, transform.position);
+        //ranking.add(dist, this.name);
     }
 }

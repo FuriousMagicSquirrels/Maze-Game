@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class ItemPickUp : MonoBehaviour {
@@ -7,16 +8,23 @@ public class ItemPickUp : MonoBehaviour {
     private int numStunBombs = 3;
     private float throwSpeed = 15.0f;
 
+    GameObject textObj;
+    Text textComp;
+
     Animator anim;
 
     // Use this for initialization
     void Start () {
         anim = GetComponent<Animator>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        
+
+        // for UI for stun bomb count
+        textObj = GameObject.Find("Text");
+        textComp = textObj.GetComponent<Text>();
+        updateBombCountUI();
+    }
+
+    // Update is called once per frame
+    void Update () {
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -47,6 +55,7 @@ public class ItemPickUp : MonoBehaviour {
         {
             print("speedpotion");
             numSpeedPots++;
+
             // play a sound
             Destroy(obj);
 
@@ -54,6 +63,8 @@ public class ItemPickUp : MonoBehaviour {
         else if (obj.name == "StunBombItem(Clone)")
         {
             numStunBombs++;
+            updateBombCountUI();
+
             // play a sound
             Destroy(obj);
         }
@@ -62,6 +73,7 @@ public class ItemPickUp : MonoBehaviour {
     void UseStunBomb()
     {
         numStunBombs--;
+        updateBombCountUI();
 
         // play a sound
 
@@ -75,5 +87,10 @@ public class ItemPickUp : MonoBehaviour {
     {
         print("setting anim speed");
         anim.speed = 5.0f; // doesnt work...
+    }
+
+    void updateBombCountUI()
+    {
+        textComp.text = numStunBombs.ToString();
     }
 }
