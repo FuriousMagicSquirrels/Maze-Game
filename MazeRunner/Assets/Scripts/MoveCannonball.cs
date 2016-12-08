@@ -11,12 +11,12 @@ public class MoveCannonball : MonoBehaviour {
 
     //public AudioClip hitSound;
     private Clips clipsScript; // holds audio clips
-    private AudioSource source;
+    //private AudioSource source;
 	
     void Start()
     {
         clipsScript = GameObject.Find("SoundManager").GetComponent<Clips>();
-        source = GameObject.Find("SoundManager").GetComponent<AudioSource>();
+        //source = GameObject.Find("SoundManager").GetComponent<AudioSource>();
     }
 
 	// Update is called once per frame
@@ -50,7 +50,7 @@ public class MoveCannonball : MonoBehaviour {
 
         // collision explosion sound
         //source.clip = clipsScript.collisionSound;
-        AudioSource.PlayClipAtPoint(clipsScript.collisionSound, gameObject.transform.position, 0.5f);
+        AudioSource.PlayClipAtPoint(clipsScript.collisionSound, gameObject.transform.position, 0.2f);
 
 
         // destroy
