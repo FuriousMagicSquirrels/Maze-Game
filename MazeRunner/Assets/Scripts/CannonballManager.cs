@@ -26,8 +26,10 @@ public class CannonballManager : MonoBehaviour {
             GameObject obj = GameObject.Find("Cannonballs/"+objName);
 
             // set pos
+            
             Vector3 pos = obj.transform.position;                     
             cbPositions[i] = pos;
+            print(pos);
 
             // set velocity
             CannonballDirection cbDirScript = obj.GetComponent<CannonballDirection>();            
