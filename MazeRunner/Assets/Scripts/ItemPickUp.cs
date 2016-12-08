@@ -66,6 +66,8 @@ public class ItemPickUp : MonoBehaviour {
             updateBombCountUI();
 
             // play a sound
+
+
             Destroy(obj);
         }
     }

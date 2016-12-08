@@ -7,7 +7,15 @@ public class MoveCannonball : MonoBehaviour {
     
     float maxLifetime = 1.5f;
     float lifeTimer = 0.0f;
+
+    //public AudioClip hitSound;
+    private AudioSource source;
 	
+    void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
 	// Update is called once per frame
 	void Update () {
         checkLifetime();
@@ -36,6 +44,10 @@ public class MoveCannonball : MonoBehaviour {
         // if player, stun
 
         // if ai, stun
+
+        // collision explosion sound
+        source.Play();
+
 
         // destroy
         print("cannonball collision");
