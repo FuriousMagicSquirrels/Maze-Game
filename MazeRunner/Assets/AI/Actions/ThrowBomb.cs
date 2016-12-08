@@ -19,10 +19,10 @@ public class ThrowBomb : RAINAction
         GameObject enemy = ai.Body;
         if (ai.Motor.IsFacing(target.transform.position)){
             GameObject bombCopy = UnityEngine.Object.Instantiate(bomb);
-            bombCopy.transform.position = new Vector3(enemy.transform.position.x, enemy.transform.position.y + 5f, enemy.transform.position.z);
+            bombCopy.transform.position = new Vector3(enemy.transform.position.x, enemy.transform.position.y + 2.5f, enemy.transform.position.z);
             Vector3 velocity = target.GetComponent<Rigidbody>().velocity;
             Vector3 direction = target.transform.position - enemy.transform.position + velocity;
-            bombCopy.GetComponent<Rigidbody>().velocity = new Vector3(direction.x, direction.y , direction.z);
+            bombCopy.GetComponent<Rigidbody>().velocity = new Vector3(direction.x, direction.y , direction.z)*2;
             var currentBomb = ai.WorkingMemory.GetItem<int>("numBomb");
             ai.WorkingMemory.SetItem<int>("numBomb", currentBomb - 1);
             return ActionResult.SUCCESS;
