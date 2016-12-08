@@ -32,7 +32,7 @@ public class NextPoint : RAINAction
         {
             ai.WorkingMemory.SetItem<Stack<int>>("stack", new Stack<int>());
             stack = ai.WorkingMemory.GetItem<Stack<int>>("stack");
-            stack.Push(0);
+            //stack.Push(0);
         }
         base.Start(ai);
     }
@@ -57,7 +57,7 @@ public class NextPoint : RAINAction
         lastWaypoint = waypointSet.GetClosestWaypointIndex(ai.Kinematic.Position);
         if (lastWaypoint< 0)
             return ActionResult.FAILURE;
-
+        Debug.Log(lastWaypoint);
 
         visited.Add(lastWaypoint);
         moveTarget.VectorTarget = waypointSet.Waypoints[lastWaypoint].Position;
@@ -67,7 +67,6 @@ public class NextPoint : RAINAction
             ai.WorkingMemory.SetItem<MoveLookTarget>(MoveTargetVariable.VariableName, moveTarget);
             return ActionResult.SUCCESS;
         }
-
         //If currently at a waypoint
         NavigationGraphNode tNode = waypointSet.Graph.GetNode(lastWaypoint);
         if (tNode.OutEdgeCount > 0)
