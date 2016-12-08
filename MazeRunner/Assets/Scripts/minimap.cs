@@ -6,11 +6,13 @@ public class minimap : MonoBehaviour
 {
 
 
-
+    LevelChanger script;
     void Awake()
     {
+
         Transform fire = GameObject.Find("Campfire").transform;
-        if (fire.Find("CampfireCollider").GetComponent<LevelChanger>().loseEnable)
+        script = fire.Find("CampfireCollider").GetComponent<LevelChanger>();
+        if (script.loseEnable)
         {
             DontDestroyOnLoad(gameObject);
             Debug.Log("reload");

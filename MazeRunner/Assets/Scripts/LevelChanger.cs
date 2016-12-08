@@ -17,7 +17,8 @@ void Update() {
 		if (Input.GetButton("Fire1") || Input.GetButton("Submit")) {
 			Scene scene = SceneManager.GetActiveScene(); 
 			SceneManager.LoadScene(scene.name);
-		}
+            DontDestroyOnLoad(gameObject);
+            }
 	}
 }
 
