@@ -125,6 +125,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			if (!m_IsGrounded)
 			{
 				m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
+				m_Capsule.height = m_Animator.GetFloat("colliderHeight");
+
 			}
 
 			// calculate which leg is behind, so as to leave that leg trailing in the jump animation
