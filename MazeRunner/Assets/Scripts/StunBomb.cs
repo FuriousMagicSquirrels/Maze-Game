@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(AudioSource))]
 public class StunBomb : MonoBehaviour
 {
 
@@ -10,13 +11,15 @@ public class StunBomb : MonoBehaviour
 
     GameObject player;
     //PlayerScript script;
+    private Clips clipsScript; // holds audio clips
 
     // Use this for initialization
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         //script = player.GetComponent<PlayerScript>();
-        
+        clipsScript = GameObject.Find("SoundManager").GetComponent<Clips>();
+
     }
 
     // Update is called once per frame
@@ -48,7 +51,8 @@ public class StunBomb : MonoBehaviour
         {
 
             //script.PlayHitSound();
-            //script.DecreaseHP(atkDmg);
+            AudioSource.PlayClipAtPoint(clipsScript.stunBombHitSound, gameObject.transform.position, 1.0f);
+            
             // script.stunAI();
 
             print("hit AI");
