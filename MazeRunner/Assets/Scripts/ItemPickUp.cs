@@ -12,7 +12,8 @@ public class ItemPickUp : MonoBehaviour {
     Text textComp;
 
     Animator anim;
-
+    public AudioClip pick;
+    public AudioClip throwb;
     // Use this for initialization
     void Start () {
         anim = GetComponent<Animator>();
@@ -31,6 +32,9 @@ public class ItemPickUp : MonoBehaviour {
             print("R pressed");
             if (numStunBombs > 0)
             {
+                
+                GetComponent<AudioSource>().clip = throwb;
+                GetComponent<AudioSource>().Play();
                 UseStunBomb();
             }
         }
@@ -62,6 +66,9 @@ public class ItemPickUp : MonoBehaviour {
         }
         else if (obj.name == "StunBombItem(Clone)")
         {
+            Debug.Log("pickup");
+            GetComponent<AudioSource>().clip = pick;
+            GetComponent<AudioSource>().Play();
             numStunBombs++;
             updateBombCountUI();
 
@@ -80,7 +87,7 @@ public class ItemPickUp : MonoBehaviour {
         // play a sound
 
         // throw stun bomb
-        Vector3 startPos = transform.position + new Vector3(0.5f, 1.5f, 0.0f); // offset from player (put 0.5 in Z instead of X if u reset player's y-rot to 0)
+        Vector3 startPos = transform.position + new Vector3(0.5f, 1.5f, 0.5f); // offset from player (put 0.5 in Z instead of X if u reset player's y-rot to 0)
         StunBomb sb = Instantiate(Resources.Load("StunBomb", typeof(StunBomb)), startPos, Quaternion.identity) as StunBomb;
         sb.vel = transform.forward * throwSpeed;
     }
