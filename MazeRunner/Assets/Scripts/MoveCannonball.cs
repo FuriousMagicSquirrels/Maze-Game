@@ -47,19 +47,21 @@ public class MoveCannonball : MonoBehaviour {
         // if player, stun
 
         // if ai, stun
+        print("spike collision");
+        AudioClip sound = Resources.Load("collision") as AudioClip;
+        AudioSource.PlayClipAtPoint(sound, gameObject.transform.position, 1.0f);
 
         // collision explosion sound
         //source.clip = clipsScript.collisionSound;
         //AudioSource.PlayClipAtPoint(clipsScript.collisionSound, gameObject.transform.position, 1.0f);
         if (collision.gameObject.name == "Player")
         {
-            //AudioClip sound = Resources.Load("collision") as AudioClip;
-            //AudioSource.PlayClipAtPoint(sound, gameObject.transform.position, 1.0f);
-            AudioSource.PlayClipAtPoint(clipsScript.collisionSound, gameObject.transform.position, 1.0f);
+            
+            //AudioSource.PlayClipAtPoint(clipsScript.collisionSound, gameObject.transform.position, 1.0f);
         }
         else
         {
-            AudioSource.PlayClipAtPoint(clipsScript.collisionSound, gameObject.transform.position, 0.1f);
+            //AudioSource.PlayClipAtPoint(clipsScript.collisionSound, gameObject.transform.position, 0.1f);
         }
         
 
@@ -70,16 +72,6 @@ public class MoveCannonball : MonoBehaviour {
         //print(collision.gameObject.name);
         Destroy(gameObject);
     }
-
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    // if player, stun
-
-    //    // if ai, stun
-
-    //    // destroy
-    //    print("triggered");
-    //    Destroy(gameObject);
-    //}
+    
 
 }
