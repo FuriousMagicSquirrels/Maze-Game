@@ -16,7 +16,7 @@ public class TransToPlay : MonoBehaviour
 
     public void toplay()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("DemoScene 1");
 
     }
 }
