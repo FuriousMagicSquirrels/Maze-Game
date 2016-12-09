@@ -50,7 +50,15 @@ public class MoveCannonball : MonoBehaviour {
 
         // collision explosion sound
         //source.clip = clipsScript.collisionSound;
-        AudioSource.PlayClipAtPoint(clipsScript.collisionSound, gameObject.transform.position, 0.2f);
+        if (collision.gameObject.name == "Player")
+        {
+            AudioSource.PlayClipAtPoint(clipsScript.collisionSound, gameObject.transform.position, 1.0f);
+        }
+        else
+        {
+            AudioSource.PlayClipAtPoint(clipsScript.collisionSound, gameObject.transform.position, 0.1f);
+        }
+        
 
 
         // destroy
