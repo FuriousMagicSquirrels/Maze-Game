@@ -16,7 +16,7 @@ public class TransToPlay : MonoBehaviour
 
     public void toplay()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level1Remake");
 
     }
 }
